@@ -54,9 +54,10 @@ Do not deploy, change the server, or proceed to another feature unless the user 
 
 ## Git and review workflow
 
-- Start each feature from an up-to-date `main` branch and create a dedicated `feature/<short-name>` branch.
+- Create a dedicated `feature/<short-name>` branch for every feature.
+- If the previous feature is not yet merged, create the next branch from that completed feature branch and target its pull request at the previous branch. This keeps each review limited to one feature. Merge stacked pull requests in feature order.
 - Keep each merge request limited to one feature from `REQUIREMENTS.md`.
 - Commit the completed feature only after its relevant checks pass.
 - Push the feature branch and create a merge request for user review. Do not merge it.
 - Write a complete merge request description covering the problem, implemented behavior, important architecture or security decisions, files or areas changed, tests run, manual verification, and known limitations.
-- Wait for the user to review and merge the request before starting the next feature unless the user explicitly directs otherwise.
+- Continue with the next feature after opening the pull request; do not wait for review unless the user asks you to pause.
